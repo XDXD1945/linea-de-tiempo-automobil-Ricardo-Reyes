@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolución del Automóvil: Del Vapor a la Movilidad Autónoma</title>
+    <style>
+        :root {
+            --bg-color: #0b0d12;
+            --card-bg: rgba(22, 27, 34, 0.85);
+            --border-color: #30363d;
+            --accent-gold: #e5a93c;
+            --accent-neon: #00d2ff;
+            --text-main: #c9d1d9;
+            --text-title: #f0f6fc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            overflow-x: hidden;
+            perspective: 1000px;
+        }
+
+        /* Ambient Parallax Background Canvas Grid */
+        #bg-grid {
+            position: fixed;
+            top: -10%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(0, 210, 255, 0.05) 0%, transparent 60%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+            z-index: -1;
+            transition: transform 0.1s ease-out;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            transition: transform 0.1s ease-out;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+        }
+
+        header h1 {
+            color: var(--text-title);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--accent-gold);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #8b949e;
+            margin-top: 10px;
+        }
+
+        /* Timeline Structural Styling */
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+            padding: 20px 0;
+        }
+
+        /* Central Timeline Track (Chassis Beam aesthetic) */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(180deg, var(--accent-gold) 0%, var(--accent-neon) 100%);
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            width: 50%;
+            padding: 0 40px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        /* Timeline Central Nodes (Wheel/Bearing aesthetic) */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 18px;
+            height: 18px;
+            background-color: var(--bg-color);
+            border: 4px solid var(--accent-gold);
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 8px var(--accent-gold);
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -11px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -11px;
+            border-color: var(--accent-neon);
+            box-shadow: 0 0 8px var(--accent-neon);
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-neon);
+        }
+
+        .year-tag {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 4px 12px;
+            background: rgba(229, 169, 60, 0.15);
+            color: var(--accent-gold);
+            border-radius: 20px;
+            border: 1px solid var(--accent-gold);
+            margin-bottom: 12px;
+        }
+
+        .timeline-item:nth-child(even) .year-tag {
+            background: rgba(0, 210, 255, 0.15);
+            color: var(--accent-neon);
+            border-color: var(--accent-neon);
+        }
+
+        h3 {
+            color: var(--text-title);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .factor-box {
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--accent-gold);
+            font-size: 0.88rem;
+            color: #a3b3c2;
+            text-align: left;
+        }
+
+        .timeline-item:nth-child(even) .factor-box {
+            border-left-color: var(--accent-neon);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 180px;
+            margin-top: 15px;
+            border-radius: 6px;
+            border: 1px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #161b22;
+            color: #8b949e;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.85rem;
+            color: #8b949e;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 10px;
+                text-align: left !important;
+            }
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            .timeline-item::after, .timeline-item:nth-child(even)::after {
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="bg-grid"></div>
+
+    <div class="container" id="interactive-container">
+        <header>
+            <h1>Línea del Tiempo: La Evolución del Automóvil</h1>
+            <p>Análisis de las transformaciones tecnológicas, sociales e industriales de la movilidad terrestre</p>
+        </header>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="content-card">
+                    <span class="year-tag">1769</span>
+                    <h3>El Primer Automóvil a Vapor (Fardier de Cugnot)</h3>
+                    <p>El inventor francés Nicolas-Joseph Cugnot diseñó y construyó el primer vehículo autopropulsado conocido: una caldera de vapor montada sobre una estructura de tres ruedas mecánicas destinada a transportar artillería pesada.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Tecnológicos y Militares):</strong> La necesidad de trasladar armamento militar pesado sin depender de la tracción animal impulsó la aplicación de la caldera de vapor a sistemas de transporte terrestre.
+                    </div>
+                    <div class="image-placeholder">[Imagen histórica representativa del Fardier de Cugnot - 1769]</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="content-card">
+                    <span class="year-tag">1886</span>
+                    <h3>Patente del Motor de Combustión Interna (Benz Patent-Motorwagen)</h3>
+                    <p>Karl Benz acuñó la era moderna del transporte al patentar el primer automóvil equipado con un motor de combustión interna a gasolina de cuatro tiempos. Este hito independizó al vehículo de las voluminosas calderas de vapor.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Científicos e Industriales):</strong> El desarrollo de la termodinámica y el refinamiento de hidrocarburos permitieron diseñar motores ligeros, eficientes y de respuesta rápida para el uso personal.
+                    </div>
+                    <div class="image-placeholder">[Imagen histórica representativa del Benz Patent-Motorwagen - 1886]</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="content-card">
+                    <span class="year-tag">1908</span>
+                    <h3>Producción en Masa y Fabricación en Cadena (Ford Modelo T)</h3>
+                    <p>Henry Ford revolucionó la industria automotriz al implementar la línea de ensamblaje móvil para la fabricación del Ford Modelo T. Esto transformó un bien de lujo en un producto masivo de consumo accesible.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Económicos y Sociales):</strong> La creciente urbanización exigía transporte eficiente. La producción en cadena redujo los costos unitarios y democratizó el acceso al automóvil en la sociedad civil.
+                    </div>
+                    <div class="image-placeholder">[Imagen histórica representativa del Ford Modelo T en línea de ensamblaje - 1908]</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="content-card">
+                    <span class="year-tag">1959</span>
+                    <h3>Introducción del Cinturón de Seguridad de Tres Puntos</h3>
+                    <p>Volvo introdujo de forma liberada (abriendo la patente a la competencia) el cinturón de seguridad de tres puntos inventado por Nils Bohlin, marcando un cambio conceptual drástico en la ingeniería automotriz orientada a la seguridad pasiva.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Sociales y de Salud Pública):</strong> El aumento masivo en las velocidades y el volumen del tráfico generaron un incremento crítico en la siniestralidad vial, exigiendo estándares legales e ingenieriles para proteger la vida humana.
+                    </div>
+                    <div class="image-placeholder">[Imagen representativa del sistema de cinturón de tres puntos Volvo - 1959]</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="content-card">
+                    <span class="year-tag">1997</span>
+                    <h3>Masificación de la Propulsión Híbrida (Toyota Prius)</h3>
+                    <p>Llega al mercado comercial el primer automóvil híbrido fabricado en serie, combinando un motor de combustión interna con una batería y motor eléctrico para optimizar la eficiencia del combustible.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Ambientales y Energéticos):</strong> Las crisis del petróleo combinadas con las crecientes regulaciones sobre emisión de gases contaminantes impulsaron la búsqueda de alternativas energéticas eficientes.
+                    </div>
+                    <div class="image-placeholder">[Imagen representativa de la primera generación del Toyota Prius - 1997]</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="content-card">
+                    <span class="year-tag">2026</span>
+                    <h3>Electrificación Total, Conectividad IoT y Conducción Autónoma</h3>
+                    <p>El vehículo actual se consolidó como una plataforma digital altamente electrificada, equipada con arquitecturas de software avanzadas, sensores LiDAR, asistencia de conducción autónoma de nivel superior y conectividad en tiempo real.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Científicos, Digitales y Ecológicos):</strong> Los compromisos mundiales por la descarbonización, sumados al salto cualitativo en Inteligencia Artificial y microelectrónica, reemplazaron la mecánica tradicional por sistemas inteligentes sostenibles.
+                    </div>
+                    <div class="image-placeholder">[Imagen del ecosistema de un automóvil eléctrico autónomo y conectado - 2026]</div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>Evolución de Objetos Tecnológicos — Departamento de Tecnología</p>
+        </footer>
+    </div>
+
+    <script>
+        // Parallax Interaction Logic based on Cursor Position
+        const container = id = document.getElementById('interactive-container');
+        const bgGrid = document.getElementById('bg-grid');
+
+        document.addEventListener('mousemove', (e) => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+
+            // Normalize mouse vector from -1 to 1
+            const mouseX = (e.clientX / width) * 2 - 1;
+            const mouseY = (e.clientY / height) * 2 - 1;
+
+            // Mild subtle 3D tilt for content container
+            const rotateX = mouseY * -4;
+            const rotateY = mouseX * 4;
+            container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+            // Background subtle displacement layer
+            const bgX = mouseX * -20;
+            const bgY = mouseY * -20;
+            bgGrid.style.transform = `translate(${bgX}px, ${bgY}px)`;
+        });
+    </script>
+</body>
+</html>
