@@ -29,7 +29,6 @@
             perspective: 1000px;
         }
 
-        /* Ambient Parallax Background Canvas Grid */
         #bg-grid {
             position: fixed;
             top: -10%;
@@ -81,14 +80,12 @@
             margin-top: 10px;
         }
 
-        /* Timeline Structural Styling */
         .timeline {
             position: relative;
             margin: 40px 0;
             padding: 20px 0;
         }
 
-        /* Central Timeline Track */
         .timeline::before {
             content: '';
             position: absolute;
@@ -103,7 +100,7 @@
 
         .timeline-item {
             position: relative;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             width: 50%;
             padding: 0 40px;
         }
@@ -118,7 +115,6 @@
             text-align: left;
         }
 
-        /* Timeline Central Nodes */
         .timeline-item::after {
             content: '';
             position: absolute;
@@ -146,7 +142,7 @@
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 10px;
-            padding: 25px;
+            padding: 22px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.4);
             backdrop-filter: blur(10px);
             transition: transform 0.3s ease, border-color 0.3s ease;
@@ -166,7 +162,7 @@
             color: var(--accent-gold);
             border-radius: 20px;
             border: 1px solid var(--accent-gold);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .timeline-item:nth-child(even) .year-tag {
@@ -177,22 +173,22 @@
 
         h3 {
             color: var(--text-title);
-            font-size: 1.3rem;
-            margin-bottom: 12px;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
         }
 
         p {
-            font-size: 0.95rem;
+            font-size: 0.93rem;
             line-height: 1.6;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .factor-box {
-            margin-top: 15px;
-            padding: 12px;
+            margin-top: 12px;
+            padding: 10px 12px;
             background: rgba(255, 255, 255, 0.03);
             border-left: 3px solid var(--accent-gold);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: #a3b3c2;
             text-align: left;
             line-height: 1.5;
@@ -237,7 +233,7 @@
     <div class="container" id="interactive-container">
         <header>
             <h1>Línea del Tiempo: La Evolución del Automóvil</h1>
-            <p>Análisis de las transformaciones tecnológicas, sociales e industriales de la movilidad terrestre</p>
+            <p>Análisis integral de las transformaciones tecnológicas, industriales, sociales y ecológicas del transporte autopropulsado</p>
         </header>
 
         <div class="timeline">
@@ -247,9 +243,9 @@
                 <div class="content-card">
                     <span class="year-tag">1769</span>
                     <h3>El Primer Automóvil a Vapor (Fardier de Cugnot)</h3>
-                    <p>El inventor francés Nicolas-Joseph Cugnot diseñó y construyó el primer vehículo autopropulsado conocido: una caldera de vapor montada sobre una estructura de tres ruedas mecánicas destinada a transportar artillería pesada.</p>
+                    <p>El inventor francés Nicolas-Joseph Cugnot diseñó el primer vehículo autopropulsado mediante un motor de vapor de dos cilindros verticales y tres ruedas de madera mecánicas, pensado originalmente para el transporte de cañones pesados.</p>
                     <div class="factor-box">
-                        <strong>Razón de la evolución (Factores Tecnológicos y Militares):</strong> La necesidad de trasladar armamento militar pesado sin depender de la tracción animal impulsó la aplicación de la caldera de vapor a sistemas de transporte terrestre.
+                        <strong>Razón de la evolución (Factores Tecnológicos y Militares):</strong> La urgencia de trasladar artillería pesada sin depender de la tracción animal impulsó las primeras aplicaciones prácticas de la máquina de vapor a la movilidad terrestre.
                     </div>
                 </div>
             </div>
@@ -258,10 +254,10 @@
             <div class="timeline-item">
                 <div class="content-card">
                     <span class="year-tag">1886</span>
-                    <h3>Patente del Motor de Combustión Interna (Benz Patent-Motorwagen)</h3>
-                    <p>Karl Benz acuñó la era moderna del transporte al patentar el primer automóvil equipado con un motor de combustión interna a gasolina de cuatro tiempos. Este hito independizó al vehículo de las voluminosas calderas de vapor.</p>
+                    <h3>Motor de Combustión Interna (Benz Patent-Motorwagen)</h3>
+                    <p>Karl Benz patenta en Alemania el primer automóvil con motor de combustión interna a gasolina de cuatro tiempos. Paralelamente, Gottlieb Daimler construye el primer vehículo de cuatro ruedas propulsado por un motor similar, dando origen a la era moderna.</p>
                     <div class="factor-box">
-                        <strong>Razón de la evolución (Factores Científicos e Industriales):</strong> El desarrollo de la termodinámica y el refinamiento de hidrocarburos permitieron diseñar motores ligeros, eficientes y de respuesta rápida para el uso personal.
+                        <strong>Razón de la evolución (Factores Científicos e Industriales):</strong> Los avances en la termodinámica y la refinación de derivados del petróleo permitieron crear motores de alta potencia relativa y bajo peso frente a las pesadas calderas de vapor.
                     </div>
                 </div>
             </div>
@@ -270,10 +266,10 @@
             <div class="timeline-item">
                 <div class="content-card">
                     <span class="year-tag">1908</span>
-                    <h3>Producción en Masa y Fabricación en Cadena (Ford Modelo T)</h3>
-                    <p>Henry Ford revolucionó la industria automotriz al implementar la línea de ensamblaje móvil para la fabricación del Ford Modelo T. Esto transformó un bien de lujo en un producto masivo de consumo accesible.</p>
+                    <h3>Producción en Masa y Cadena de Montaje (Ford Modelo T)</h3>
+                    <p>Henry Ford introduce el Ford Modelo T y estandariza la línea de ensamblaje móvil. Este proceso industrial transformó la fabricación artesanal y costosa en una producción continua de alta velocidad.</p>
                     <div class="factor-box">
-                        <strong>Razón de la evolución (Factores Económicos y Sociales):</strong> La creciente urbanización exigía transporte eficiente. La producción en cadena redujo los costos unitarios y democratizó el acceso al automóvil en la sociedad civil.
+                        <strong>Razón de la evolución (Factores Económicos y Sociales):</strong> La masiva expansión urbana exigía transporte individual accesible. La cadena de montaje redujo drásticamente costos y tiempos de fabricación, masificando el automóvil en la clase media.
                     </div>
                 </div>
             </div>
@@ -281,11 +277,11 @@
             <!-- Hito 4 -->
             <div class="timeline-item">
                 <div class="content-card">
-                    <span class="year-tag">1959</span>
-                    <h3>Introducción del Cinturón de Seguridad de Tres Puntos</h3>
-                    <p>Volvo introdujo de forma liberada (abriendo la patente a la competencia) el cinturón de seguridad de tres puntos inventado por Nils Bohlin, marcando un cambio conceptual drástico en la ingeniería automotriz orientada a la seguridad pasiva.</p>
+                    <span class="year-tag">1938</span>
+                    <h3>Aerodinámica y Masificación Económica (Volkswagen Beetle)</h3>
+                    <p>Surge el diseño del Volkswagen Tipo 1, enfocado en un chasis aerodinámico, mecánica simple refrigerada por aire y máxima durabilidad. Sentó las bases de la producción global estandarizada a gran escala post-guerra.</p>
                     <div class="factor-box">
-                        <strong>Razón de la evolución (Factores Sociales y de Salud Pública):</strong> El aumento masivo en las velocidades y el volumen del tráfico generaron un incremento crítico en la siniestralidad vial, exigiendo estándares legales e ingenieriles para proteger la vida humana.
+                        <strong>Razón de la evolución (Factores Políticos y Socioeconómicos):</strong> Necesidad de crear vehículos de ultra bajo costo para infraestructura de autopistas masivas, integrando conceptos aerodinámicos para reducir consumo energético.
                     </div>
                 </div>
             </div>
@@ -293,11 +289,11 @@
             <!-- Hito 5 -->
             <div class="timeline-item">
                 <div class="content-card">
-                    <span class="year-tag">1997</span>
-                    <h3>Masificación de la Propulsión Híbrida (Toyota Prius)</h3>
-                    <p>Llega al mercado comercial el primer automóvil híbrido fabricado en serie, combinando un motor de combustión interna con una batería y motor eléctrico para optimizar la eficiencia del combustible.</p>
+                    <span class="year-tag">1959</span>
+                    <h3>Cinturón de Seguridad de Tres Puntos y Seguridad Pasiva</h3>
+                    <p>Nils Bohlin inventa el cinturón de tres puntos para Volvo, empresa que libera la patente al público para masificar la seguridad. En los años posteriores se sumaron innovaciones como el sistema de frenos ABS (1978) y las bolsas de aire (Airbags, 1980).</p>
                     <div class="factor-box">
-                        <strong>Razón de la evolución (Factores Ambientales y Energéticos):</strong> Las crisis del petróleo combinadas con las crecientes regulaciones sobre emisión de gases contaminantes impulsaron la búsqueda de alternativas energéticas eficientes.
+                        <strong>Razón de la evolución (Factores Sociales y de Salud Pública):</strong> El aumento vertiginoso en la velocidad media de los autos incrementó exponencialmente los siniestros fatales, obligando a priorizar la ingeniería de protección pasiva para los ocupantes.
                     </div>
                 </div>
             </div>
@@ -305,11 +301,59 @@
             <!-- Hito 6 -->
             <div class="timeline-item">
                 <div class="content-card">
-                    <span class="year-tag">2026</span>
-                    <h3>Electrificación Total, Conectividad IoT y Conducción Autónoma</h3>
-                    <p>El vehículo actual se consolidó como una plataforma digital altamente electrificada, equipada con arquitecturas de software avanzadas, sensores LiDAR, asistencia de conducción autónoma de nivel superior y conectividad en tiempo real.</p>
+                    <span class="year-tag">1973</span>
+                    <h3>Sistemas de Inyección Electrónica y Reducción de Emisiones</h3>
+                    <p>Debido a la gran crisis internacional del petróleo, la industria migra masivamente de los carburadores mecánicos a la inyección electrónica de combustible gestionada por microprocesadores primarios, optimizando el consumo.</p>
                     <div class="factor-box">
-                        <strong>Razón de la evolución (Factores Científicos, Digitales y Ecológicos):</strong> Los compromisos mundiales por la descarbonización, sumados al salto cualitativo en Inteligencia Artificial y microelectrónica, reemplazaron la mecánica tradicional por sistemas inteligentes sostenibles.
+                        <strong>Razón de la evolución (Factores Económicos y Ambientales):</strong> El alto costo del combustible y las primeras legislaciones contra el "smog" urbano exigieron un control electrónico preciso del consumo y la salida de gases nocivos.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hito 7 -->
+            <div class="timeline-item">
+                <div class="content-card">
+                    <span class="year-tag">1997</span>
+                    <h3>Masificación Comercial del Motor Híbrido (Toyota Prius)</h3>
+                    <p>Se lanza al mercado internacional el Toyota Prius, el primer automóvil comercial masivo que combina un motor térmico de gasolina con un motor eléctrico regenerativo asistido por baterías de alta capacidad.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Ecológicos y Científicos):</strong> El consenso sobre el cambio climático y la firma de acuerdos ambientales globales obligaron a la industria a explorar alternativas de propulsión limpia y de bajo consumo.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hito 8 -->
+            <div class="timeline-item">
+                <div class="content-card">
+                    <span class="year-tag">2008</span>
+                    <h3>Revolución de las Baterías y Vehículos 100% Eléctricos</h3>
+                    <p>Llegan los primeros superdeportivos y sedanes 100% eléctricos de alta autonomía basados en baterías de iones de litio (como el Tesla Roadster), demostrando que la propulsión eléctrica podía superar en potencia y alcance a los motores de combustión.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Tecnológicos y de Almacenamiento):</strong> La maduración de la tecnología de baterías recargables densas (desarrolladas inicialmente para telefonía móvil) hizo viable la movilidad eléctrica de largo alcance.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hito 9 -->
+            <div class="timeline-item">
+                <div class="content-card">
+                    <span class="year-tag">2015</span>
+                    <h3>Telemetría, Conectividad IoT y Asistencias de Conducción (ADAS)</h3>
+                    <p>Los automóviles integran radares, cámaras hiperfocales y conexión permanente a internet. Nacen los sistemas ADAS (mantenimiento de carril, frenado autónomo de emergencia) cambiando la interacción conductor-vehículo.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Digitales y Computacionales):</strong> La miniaturización de microchips y la potencia del procesamiento digital permitieron convertir al auto en un nodo conectado capaz de tomar decisiones de seguridad en milisegundos.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hito 10 -->
+            <div class="timeline-item">
+                <div class="content-card">
+                    <span class="year-tag">2026</span>
+                    <h3>Electrificación Dominante, IA Integrada y Movilidad Autónoma</h3>
+                    <p>El vehículo moderno es un sistema informático sobre ruedas propulsado por energías renovables, con arquitecturas definidas por software (SDV), sensores LiDAR avanzados para autoconducción inteligente y actualizaciones inalámbricas globales.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Ambientales, Legales y Tecnológicos):</strong> Leyes de descarbonización mundial sumadas al despliegue de la Inteligencia Artificial obligaron a sustituir la ingeniería mecánica clásica por movilidad sostenible autónoma.
                     </div>
                 </div>
             </div>
@@ -322,7 +366,6 @@
     </div>
 
     <script>
-        // Parallax Interaction Logic based on Cursor Position
         const container = document.getElementById('interactive-container');
         const bgGrid = document.getElementById('bg-grid');
 
@@ -330,16 +373,13 @@
             const width = window.innerWidth;
             const height = window.innerHeight;
 
-            // Normalize mouse vector from -1 to 1
             const mouseX = (e.clientX / width) * 2 - 1;
             const mouseY = (e.clientY / height) * 2 - 1;
 
-            // Mild subtle 3D tilt for content container
             const rotateX = mouseY * -4;
             const rotateY = mouseX * 4;
             container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
-            // Background subtle displacement layer
             const bgX = mouseX * -20;
             const bgY = mouseY * -20;
             bgGrid.style.transform = `translate(${bgX}px, ${bgY}px)`;
