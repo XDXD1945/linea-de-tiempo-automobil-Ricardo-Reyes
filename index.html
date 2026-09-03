@@ -88,7 +88,7 @@
             padding: 20px 0;
         }
 
-        /* Central Timeline Track (Chassis Beam aesthetic) */
+        /* Central Timeline Track */
         .timeline::before {
             content: '';
             position: absolute;
@@ -103,7 +103,7 @@
 
         .timeline-item {
             position: relative;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             width: 50%;
             padding: 0 40px;
         }
@@ -118,7 +118,7 @@
             text-align: left;
         }
 
-        /* Timeline Central Nodes (Wheel/Bearing aesthetic) */
+        /* Timeline Central Nodes */
         .timeline-item::after {
             content: '';
             position: absolute;
@@ -189,31 +189,17 @@
 
         .factor-box {
             margin-top: 15px;
-            padding: 10px;
+            padding: 12px;
             background: rgba(255, 255, 255, 0.03);
             border-left: 3px solid var(--accent-gold);
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: #a3b3c2;
             text-align: left;
+            line-height: 1.5;
         }
 
         .timeline-item:nth-child(even) .factor-box {
             border-left-color: var(--accent-neon);
-        }
-
-        .image-placeholder {
-            width: 100%;
-            height: 180px;
-            margin-top: 15px;
-            border-radius: 6px;
-            border: 1px dashed var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #161b22;
-            color: #8b949e;
-            font-size: 0.85rem;
-            font-style: italic;
         }
 
         footer {
@@ -256,6 +242,7 @@
 
         <div class="timeline">
 
+            <!-- Hito 1 -->
             <div class="timeline-item">
                 <div class="content-card">
                     <span class="year-tag">1769</span>
@@ -264,10 +251,10 @@
                     <div class="factor-box">
                         <strong>Razón de la evolución (Factores Tecnológicos y Militares):</strong> La necesidad de trasladar armamento militar pesado sin depender de la tracción animal impulsó la aplicación de la caldera de vapor a sistemas de transporte terrestre.
                     </div>
-                    <div class="image-placeholder">[Imagen histórica representativa del Fardier de Cugnot - 1769]</div>
                 </div>
             </div>
 
+            <!-- Hito 2 -->
             <div class="timeline-item">
                 <div class="content-card">
                     <span class="year-tag">1886</span>
@@ -276,10 +263,10 @@
                     <div class="factor-box">
                         <strong>Razón de la evolución (Factores Científicos e Industriales):</strong> El desarrollo de la termodinámica y el refinamiento de hidrocarburos permitieron diseñar motores ligeros, eficientes y de respuesta rápida para el uso personal.
                     </div>
-                    <div class="image-placeholder">[Imagen histórica representativa del Benz Patent-Motorwagen - 1886]</div>
                 </div>
             </div>
 
+            <!-- Hito 3 -->
             <div class="timeline-item">
                 <div class="content-card">
                     <span class="year-tag">1908</span>
@@ -288,10 +275,10 @@
                     <div class="factor-box">
                         <strong>Razón de la evolución (Factores Económicos y Sociales):</strong> La creciente urbanización exigía transporte eficiente. La producción en cadena redujo los costos unitarios y democratizó el acceso al automóvil en la sociedad civil.
                     </div>
-                    <div class="image-placeholder">[Imagen histórica representativa del Ford Modelo T en línea de ensamblaje - 1908]</div>
                 </div>
             </div>
 
+            <!-- Hito 4 -->
             <div class="timeline-item">
                 <div class="content-card">
                     <span class="year-tag">1959</span>
@@ -300,10 +287,10 @@
                     <div class="factor-box">
                         <strong>Razón de la evolución (Factores Sociales y de Salud Pública):</strong> El aumento masivo en las velocidades y el volumen del tráfico generaron un incremento crítico en la siniestralidad vial, exigiendo estándares legales e ingenieriles para proteger la vida humana.
                     </div>
-                    <div class="image-placeholder">[Imagen representativa del sistema de cinturón de tres puntos Volvo - 1959]</div>
                 </div>
             </div>
 
+            <!-- Hito 5 -->
             <div class="timeline-item">
                 <div class="content-card">
                     <span class="year-tag">1997</span>
@@ -312,10 +299,10 @@
                     <div class="factor-box">
                         <strong>Razón de la evolución (Factores Ambientales y Energéticos):</strong> Las crisis del petróleo combinadas con las crecientes regulaciones sobre emisión de gases contaminantes impulsaron la búsqueda de alternativas energéticas eficientes.
                     </div>
-                    <div class="image-placeholder">[Imagen representativa de la primera generación del Toyota Prius - 1997]</div>
                 </div>
             </div>
 
+            <!-- Hito 6 -->
             <div class="timeline-item">
                 <div class="content-card">
                     <span class="year-tag">2026</span>
@@ -324,7 +311,6 @@
                     <div class="factor-box">
                         <strong>Razón de la evolución (Factores Científicos, Digitales y Ecológicos):</strong> Los compromisos mundiales por la descarbonización, sumados al salto cualitativo en Inteligencia Artificial y microelectrónica, reemplazaron la mecánica tradicional por sistemas inteligentes sostenibles.
                     </div>
-                    <div class="image-placeholder">[Imagen del ecosistema de un automóvil eléctrico autónomo y conectado - 2026]</div>
                 </div>
             </div>
 
@@ -337,7 +323,7 @@
 
     <script>
         // Parallax Interaction Logic based on Cursor Position
-        const container = id = document.getElementById('interactive-container');
+        const container = document.getElementById('interactive-container');
         const bgGrid = document.getElementById('bg-grid');
 
         document.addEventListener('mousemove', (e) => {
