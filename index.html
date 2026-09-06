@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Línea del Tiempo: La Evolución del Automóvil — Ricardo Reyes</title>
+    <meta name="description" content="Recorrido histórico e ingenieril exhaustivo de los 15 hitos que transformaron la historia del transporte autopropulsado, desde el vapor de 1769 hasta la IA en 2026.">
+    <!-- Google Fonts: Inter & JetBrains Mono para acabado Enterprise -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Canvas de Fondo: Partículas Dinámicas e Interactivas -->
+    <canvas id="bg-canvas"></canvas>
+    <div id="bg-grid"></div>
+
+    <!-- Barra de Progreso de Lectura Superior -->
+    <div id="reading-progress-container">
+        <div id="reading-progress-bar"></div>
+    </div>
+
+    <div class="container" id="interactive-container">
+        
+        <!-- HEADER ENTERPRISE -->
+        <header class="hero-header">
+            <div class="header-top-bar">
+                <div class="student-badge">
+                    <span class="status-indicator"></span>
+                    <span class="badge-text">Estudiante: <strong>Ricardo Eleazar Reyes Amestica</strong></span>
+                    <span class="sub-badge">1° Medio — Tecnología | Liceo Bicentenario de Excelencia Industrial Metodista</span>
+                </div>
+                <div class="header-actions">
+                    <button id="sound-toggle-btn" class="ctrl-pill" title="Activar/Desactivar efectos de audio táctil" aria-label="Audio FX">
+                        <span class="ctrl-icon">🔊</span>
+                        <span class="ctrl-label">Audio FX: <strong id="sound-state">ON</strong></span>
+                    </button>
+                </div>
+            </div>
+
+            <h1 class="main-title">
+                Línea del Tiempo: <span class="gradient-text">La Evolución del Automóvil</span>
+            </h1>
+            <p class="header-desc">
+                Análisis técnico-científico exhaustivo de las transformaciones mecánicas, energéticas, industriales, de seguridad y digitales en 257 años de historia automotriz (1769 – 2026).
+            </p>
+
+            <!-- BARRA DE ESTADÍSTICAS INDUSTRIALES -->
+            <div class="stats-ribbon">
+                <div class="stat-item">
+                    <span class="stat-num" data-target="15">15</span>
+                    <span class="stat-label">Hitos Históricos</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="257">257</span>
+                    <span class="stat-label">Años de Evolución</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="5">5</span>
+                    <span class="stat-label">Revoluciones Tecnológicas</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num stat-highlight">0g CO₂</span>
+                    <span class="stat-label">Meta Global Cero Emisiones</span>
+                </div>
+            </div>
+
+            <!-- CONTROLES DE FILTRADO Y BÚSQUEDA ENTERPRISE -->
+            <div class="filter-search-wrapper">
+                <div class="search-box">
+                    <span class="search-icon">🔎</span>
+                    <input type="text" id="timeline-search" placeholder="Buscar por año, inventor, componente (ej: ABS, vapor, Tesla, Porsche, ESP)..." aria-label="Buscar hitos">
+                    <button id="clear-search-btn" class="clear-btn" style="display: none;" title="Limpiar búsqueda">&times;</button>
+                </div>
+
+                <div class="category-filters" role="tablist" aria-label="Filtros de categoría">
+                    <button class="filter-pill active" data-filter="all">Todos los Hitos (15)</button>
+                    <button class="filter-pill" data-filter="propulsion">⚡ Propulsión & Motores</button>
+                    <button class="filter-pill" data-filter="seguridad">🛡️ Seguridad Activa & Pasiva</button>
+                    <button class="filter-pill" data-filter="manufactura">🏭 Manufactura & Chasis</button>
+                    <button class="filter-pill" data-filter="software">🧠 Software, Sensores & IA</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENEDOR DE LÍNEA DE TIEMPO CON ESPINAZO LUMINOSO -->
+        <div class="timeline" id="timeline-track">
+            <div class="timeline-spine-glow" id="timeline-spine-glow"></div>
+            
+            <!-- HITO 1: 1769 -->
+            <div class="timeline-item" data-index="0" data-year="1769" data-categories="propulsion manufactura">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-pulse"></div>
+                </div>
+                <div class="content-card" tabindex="0">
+                    <div class="card-glow-overlay"></div>
+                    <div class="card-header-flex">
+                        <span class="year-tag">1769</span>
+                        <span class="category-badge">Propulsión a Vapor</span>
+                    </div>
+                    <h3 class="card-title">El Primer Automóvil a Vapor (Fardier de Cugnot)</h3>
+                    <div class="img-wrapper">
+                        <img src="1.jpg" alt="Fardier de Cugnot 1769" class="card-img" loading="lazy">
+                        <div class="img-fallback">
+                            <span class="fb-icon">⚙️</span>
+                            <span class="fb-text">Imagen: <strong>1.jpg</strong></span>
+                            <span class="fb-sub">Fardier de Cugnot (1769)</span>
+                        </div>
+                    </div>
+                    <p class="desc-text">Nicolas-Joseph Cugnot diseñó el primer vehículo autopropulsado para el ejército francés, mediante una caldera de vapor de dos cilindros verticales y tres ruedas mecánicas.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Militares y Mecánicos):</strong> La urgencia de movilizar artillería pesada sin el desgaste ni la limitación biológica de los caballos de tiro impulsó la aplicación de la caldera de vapor al transporte terrestre.
+                    </div>
+                    <div class="card-footer-flex">
+                        <div class="click-hint"><span>🔍 Clic para expandir ficha técnica</span></div>
+                        <span class="expand-btn">Ver Ficha Completa →</span>
+                    </div>
+                    <div class="extra-info-hidden" style="display: none;">
+                        <div class="tab-data-spec">
+                            <ul>
+                                <li><strong>Propulsión:</strong> Caldera de vapor de cobre con hogar de leña integrado.</li>
+                                <li><strong>Cilindrada/Motor:</strong> 2 cilindros verticales de simple efecto (325 mm de diámetro).</li>
+                                <li><strong>Velocidad y Autonomía:</strong> Velocidad máxima de 3.6 a 4.0 km/h; autonomía de ~15 minutos de presión.</li>
+                                <li><strong>Chasis y Masa:</strong> Viga maciza de madera de roble sobre 3 ruedas de madera con llanta de hierro (2.8 toneladas).</li>
+                                <li><strong>Transmisión:</strong> Tracción a la rueda delantera única mediante rueda de trinquete y biela.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-data-impact">
+                            <p>El Fardier demostró por primera vez en la historia humana que la energía térmica podía transformarse en trabajo cinético para mover cargas terrestres sin fuerza animal. Sentó las bases preliminares del diseño de dirección por pivote frontal y la distribución de masas en vehículos de carga pesada.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HITO 2: 1886 -->
+            <div class="timeline-item" data-index="1" data-year="1886" data-categories="propulsion">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-pulse"></div>
+                </div>
+                <div class="content-card" tabindex="0">
+                    <div class="card-glow-overlay"></div>
+                    <div class="card-header-flex">
+                        <span class="year-tag">1886</span>
+                        <span class="category-badge">Combustión Interna</span>
+                    </div>
+                    <h3 class="card-title">Motor de Combustión Interna (Benz Patent-Motorwagen)</h3>
+                    <div class="img-wrapper">
+                        <img src="2.jpg" alt="Benz Patent-Motorwagen 1886" class="card-img" loading="lazy">
+                        <div class="img-fallback">
+                            <span class="fb-icon">🚗</span>
+                            <span class="fb-text">Imagen: <strong>2.jpg</strong></span>
+                            <span class="fb-sub">Benz Patent-Motorwagen (1886)</span>
+                        </div>
+                    </div>
+                    <p class="desc-text">Karl Benz patenta el primer automóvil propulsado por un motor de combustión interna a gasolina de cuatro tiempos (Patente DRP 37435). Casi en paralelo, Gottlieb Daimler desarrolla el modelo de cuatro ruedas.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Científicos e Industriales):</strong> Los avances en termodinámica (ciclo Otto) y destilación de petróleo permitieron motores compactos con una relación potencia/peso incomparablemente superior al vapor.
+                    </div>
+                    <div class="card-footer-flex">
+                        <div class="click-hint"><span>🔍 Clic para expandir ficha técnica</span></div>
+                        <span class="expand-btn">Ver Ficha Completa →</span>
+                    </div>
+                    <div class="extra-info-hidden" style="display: none;">
+                        <div class="tab-data-spec">
+                            <ul>
+                                <li><strong>Motor:</strong> Monocilíndrico horizontal de 4 tiempos a gasolina (ligroína), 954 cc de cilindrada.</li>
+                                <li><strong>Potencia:</strong> 0.75 CV (0.55 kW) a 400 rpm.</li>
+                                <li><strong>Ignición:</strong> Encendido eléctrico por chispa con bobina de Ruhmkorff y batería de ácido.</li>
+                                <li><strong>Refrigeración:</strong> Termosifón evaporativo por agua.</li>
+                                <li><strong>Chasis:</strong> Tubería de acero curvada con ruedas de radios de alambre y neumáticos de goma maciza.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-data-impact">
+                            <p>En agosto de 1888, Bertha Benz realizó el histórico viaje de 106 km entre Mannheim y Pforzheim sin informar a las autoridades, limpiando el carburador con un alfiler y reparando los frenos con cuero, probando al mundo entero que el automóvil era un medio de transporte comercialmente viable y no un mero experimento de laboratorio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HITO 3: 1900 [NUEVO] -->
+            <div class="timeline-item" data-index="2" data-year="1900" data-categories="propulsion software">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-pulse"></div>
+                </div>
+                <div class="content-card" tabindex="0">
+                    <div class="card-glow-overlay"></div>
+                    <div class="card-header-flex">
+                        <span class="year-tag">1900</span>
+                        <span class="category-badge">Primer Híbrido & Tracción Eléctrica</span>
+                    </div>
+                    <h3 class="card-title">Lohner-Porsche "Semper Vivus": El Primer Híbrido</h3>
+                    <div class="img-wrapper">
+                        <img src="3.jpg" alt="Lohner-Porsche Semper Vivus 1900" class="card-img" loading="lazy">
+                        <img src="11.jpg" alt="Lohner-Porsche Semper Vivus 1900" class="card-img" loading="lazy">
+                        <div class="img-fallback">
+                            <span class="fb-icon">⚡</span>
+                            <span class="fb-text">Imagen: <strong>3.jpg</strong></span>
+                            <span class="fb-text">Imagen: <strong>11.jpg</strong></span>
+                            <span class="fb-sub">Lohner-Porsche Semper Vivus (1900)</span>
+                        </div>
+                    </div>
+                    <p class="desc-text">Ferdinand Porsche, junto al carrocero Ludwig Lohner, presenta en la Exposición Universal de París el primer automóvil híbrido gasolina-eléctrico funcional y pionero de los motores en el cubo de rueda.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Energéticos y de Autonomía):</strong> Los vehículos eléctricos de finales del siglo XIX eran silenciosos pero sufrían por el peso desmedido de las baterías de plomo. Porsche integró generadores a combustión para recargar las baterías en marcha.
+                    </div>
+                    <div class="card-footer-flex">
+                        <div class="click-hint"><span>🔍 Clic para expandir ficha técnica</span></div>
+                        <span class="expand-btn">Ver Ficha Completa →</span>
+                    </div>
+                    <div class="extra-info-hidden" style="display: none;">
+                        <div class="tab-data-spec">
+                            <ul>
+                                <li><strong>Arquitectura:</strong> Híbrido serie con dos motores térmicos generadores y dos motores eléctricos en rueda.</li>
+                                <li><strong>Motores a Combustión:</strong> 2 motores monocilíndricos De Dion-Bouton de 2.5 CV acoplados a generadores eléctricos de 2.5 kW.</li>
+                                <li><strong>Motores Eléctricos:</strong> Motores encapsulados de 80 voltios en los cubos de las ruedas delanteras (in-wheel hub motors).</li>
+                                <li><strong>Batería:</strong> Acumulador de plomo-ácido de 44 celdas y 270 kg.</li>
+                                <li><strong>Velocidad Máxima:</strong> 35 km/h con un alcance energético continuo de hasta 200 km gracias al generador térmico.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-data-impact">
+                            <p>El diseño de Porsche prescindió de transmisiones mecánicas complejas, árboles de transmisión y diferenciales mecánicos, aplicando par motor directo instantáneo en el contacto neumático-asfalto. Es el antepasado intelectual directo de los híbridos modernos y de los vehículos eléctricos con tracción vectorial independiente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HITO 4: 1908 -->
+            <div class="timeline-item" data-index="3" data-year="1908" data-categories="manufactura">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-pulse"></div>
+                </div>
+                <div class="content-card" tabindex="0">
+                    <div class="card-glow-overlay"></div>
+                    <div class="card-header-flex">
+                        <span class="year-tag">1908</span>
+                        <span class="category-badge">Producción en Masa</span>
+                    </div>
+                    <h3 class="card-title">Línea de Ensamblaje Móvil (Ford Modelo T)</h3>
+                    <div class="img-wrapper">
+                        <img src="4.jpg" alt="Ford Modelo T 1908" class="card-img" loading="lazy">
+                        <img src="3.jpg" alt="Ford Modelo T 1908" class="card-img" loading="lazy">
+                        <div class="img-fallback">
+                            <span class="fb-icon">🏭</span>
+                            <span class="fb-text">Imagen: <strong>4.jpg</strong></span>
+                            <span class="fb-text">Imagen: <strong>3.jpg</strong></span>
+                            <span class="fb-sub">Ford Modelo T en Cadena de Montaje (1908-1913)</span>
+                        </div>
+                    </div>
+                    <p class="desc-text">Henry Ford estandarizó la línea de montaje móvil continua en la planta de Highland Park con el Modelo T, transformando la fabricación artesanal en producción industrial masiva de alta eficiencia.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Económicos y Sociolaborales):</strong> La expansión de las ciudades y la necesidad de movilidad asequible requerían una reducción radical del costo de producción unitario mediante piezas intercambiables estandarizadas.
+                    </div>
+                    <div class="card-footer-flex">
+                        <div class="click-hint"><span>🔍 Clic para expandir ficha técnica</span></div>
+                        <span class="expand-btn">Ver Ficha Completa →</span>
+                    </div>
+                    <div class="extra-info-hidden" style="display: none;">
+                        <div class="tab-data-spec">
+                            <ul>
+                                <li><strong>Motor:</strong> 4 cilindros en línea monobloque de hierro fundido, 2.9 L (177 ci), 20 CV a 1.600 rpm.</li>
+                                <li><strong>Transmisión:</strong> Engranajes planetarios de 2 marchas hacia adelante y una reversa accionada por pedales.</li>
+                                <li><strong>Materiales:</strong> Uso masivo de aleación de acero al vanadio, ofreciendo el triple de resistencia a la torsión.</li>
+                                <li><strong>Tiempo de Ensamble:</strong> Se redujo de 12 horas y 8 minutos a únicamente 93 minutos por chasis.</li>
+                                <li><strong>Precio Histórico:</strong> Descendió de $850 dólares en 1908 a $260 dólares en 1925.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-data-impact">
+                            <p>La introducción de la jornada de $5 dólares al día permitió que los propios obreros de la fábrica pudieran comprar el auto que construían. Se produjeron más de 15 millones de unidades, modificando el trazado urbanístico, impulsando la pavimentación de caminos y sentando las bases del capitalismo industrial moderno.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HITO 5: 1934 [NUEVO] -->
+            <div class="timeline-item" data-index="4" data-year="1934" data-categories="manufactura seguridad">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-pulse"></div>
+                </div>
+                <div class="content-card" tabindex="0">
+                    <div class="card-glow-overlay"></div>
+                    <div class="card-header-flex">
+                        <span class="year-tag">1934</span>
+                        <span class="category-badge">Chasis Monocasco & Tracción Delantera</span>
+                    </div>
+                    <h3 class="card-title">Chasis Monocasco de Acero (Citroën Traction Avant)</h3>
+                    <div class="img-wrapper">
+                        <img src="5.jpg" alt="Citroën Traction Avant 1934" class="card-img" loading="lazy">
+                        <img src="12.jpg" alt="Citroën Traction Avant 1934" class="card-img" loading="lazy">
+                        <div class="img-fallback">
+                            <span class="fb-icon">🛡️</span>
+                            <span class="fb-text">Imagen: <strong>5.jpg</strong></span>
+                            <span class="fb-text">Imagen: <strong>12.jpg</strong></span>
+                            <span class="fb-sub">Citroën Traction Avant (1934)</span>
+                        </div>
+                    </div>
+                    <p class="desc-text">Concebido por André Lefèbvre y Flaminio Bertoni, el Traction Avant inauguró la carrocería autoportante monocasco unibody de chapa de acero soldada y la tracción delantera producida en masa.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Estructurales y Dinámicos):</strong> Los chasis tradicionales con largueros independientes eran pesados, tenían un centro de gravedad alto y se deformaban peligrosamente en curvas y colisiones a más de 90 km/h.
+                    </div>
+                    <div class="card-footer-flex">
+                        <div class="click-hint"><span>🔍 Clic para expandir ficha técnica</span></div>
+                        <span class="expand-btn">Ver Ficha Completa →</span>
+                    </div>
+                    <div class="extra-info-hidden" style="display: none;">
+                        <div class="tab-data-spec">
+                            <ul>
+                                <li><strong>Arquitectura Estructural:</strong> Carrocería monocasco sin chasis separado; el habitáculo y la estructura forman una única celda de acero electrosoldado.</li>
+                                <li><strong>Tracción:</strong> Delantera integral con semiejes articulados homocinéticos.</li>
+                                <li><strong>Suspensión:</strong> Barras de torsión independientes que permitieron eliminar las ballestas rígidas.</li>
+                                <li><strong>Frenos:</strong> Circuito hidráulico Lockheed en las cuatro ruedas.</li>
+                                <li><strong>Centro de Gravedad:</strong> Reducido drásticamente al eliminar el túnel de transmisión bajo el piso.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-data-impact">
+                            <p>El Traction Avant demostró que el monocasco aportaba una rigidez torsional muy superior con menor masa total y mayor protección contra colisiones. Definió el estándar estructural que hoy emplean casi todos los vehículos de turismo de la industria automotriz mundial.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HITO 6: 1938 -->
+            <div class="timeline-item" data-index="5" data-year="1938" data-categories="manufactura propulsion">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-pulse"></div>
+                </div>
+                <div class="content-card" tabindex="0">
+                    <div class="card-glow-overlay"></div>
+                    <div class="card-header-flex">
+                        <span class="year-tag">1938</span>
+                        <span class="category-badge">Aerodinámica & Masificación</span>
+                    </div>
+                    <h3 class="card-title">Aerodinámica y Motor Bóxer (Volkswagen Escarabajo)</h3>
+                    <div class="img-wrapper">
+                        <img src="6.jpg" alt="Volkswagen Escarabajo 1938" class="card-img" loading="lazy">
+                        <img src="4.jpg" alt="Volkswagen Escarabajo 1938" class="card-img" loading="lazy">
+                        <div class="img-fallback">
+                            <span class="fb-icon">🚙</span>
+                            <span class="fb-text">Imagen: <strong>6.jpg</strong></span>
+                            <span class="fb-text">Imagen: <strong>4.jpg</strong></span>
+                            <span class="fb-sub">Volkswagen Beetle / KdF-Wagen (1938)</span>
+                        </div>
+                    </div>
+                    <p class="desc-text">Surge el Volkswagen Tipo 1 (Käfer/Escarabajo), enfocado en un chasis aerodinámico con forma de gota, coeficiente de resistencia bajo y una mecánica simple refrigerada por aire.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Geográficos y de Red Vial):</strong> La construcción de las primeras autopistas de alta velocidad (Autobahn) exigía vehículos económicos capaces de sostener 100 km/h constantes sin sobrecalentarse ni consumir exceso de combustible.
+                    </div>
+                    <div class="card-footer-flex">
+                        <div class="click-hint"><span>🔍 Clic para expandir ficha técnica</span></div>
+                        <span class="expand-btn">Ver Ficha Completa →</span>
+                    </div>
+                    <div class="extra-info-hidden" style="display: none;">
+                        <div class="tab-data-spec">
+                            <ul>
+                                <li><strong>Motor:</strong> Bóxer trasero de 4 cilindros opuestos, 985 cc a 1.131 cc, refrigerado por turbina de aire (sin líquido anticongelante ni radiador).</li>
+                                <li><strong>Aerodinámica:</strong> Perfil redondeado continuo con coeficiente de arrastre óptimo para su tiempo (Cx ~0.40).</li>
+                                <li><strong>Chasis:</strong> Plataforma plana central estampada en chapa con viga tubular y suspensión de barras de torsión.</li>
+                                <li><strong>Fiabilidad Mecánica:</strong> Inmune a congelamientos invernales al prescindir de circuitos de agua.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-data-impact">
+                            <p>Con más de 21.5 millones de unidades fabricadas a lo largo de 65 años de producción continua hasta el año 2003 en Puebla (México), el Escarabajo se convirtió en el ícono global de la motorización accesible, duradera y de bajo costo de mantenimiento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HITO 7: 1959 -->
+            <div class="timeline-item" data-index="6" data-year="1959" data-categories="seguridad">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-pulse"></div>
+                </div>
+                <div class="content-card" tabindex="0">
+                    <div class="card-glow-overlay"></div>
+                    <div class="card-header-flex">
+                        <span class="year-tag">1959</span>
+                        <span class="category-badge">Seguridad Pasiva</span>
+                    </div>
+                    <h3 class="card-title">Cinturón de Seguridad de 3 Puntos (Nils Bohlin / Volvo)</h3>
+                    <div class="img-wrapper">
+                        <img src="7.jpg" alt="Cinturón de tres puntos Volvo 1959" class="card-img" loading="lazy">
+                        <img src="5.jpg" alt="Cinturón de tres puntos Volvo 1959" class="card-img" loading="lazy">
+                        <div class="img-fallback">
+                            <span class="fb-icon">🔒</span>
+                            <span class="fb-text">Imagen: <strong>7.jpg</strong></span>
+                            <span class="fb-text">Imagen: <strong>5.jpg</strong></span>
+                            <span class="fb-sub">Cinturón de Seguridad Nils Bohlin (Volvo 1959)</span>
+                        </div>
+                    </div>
+                    <p class="desc-text">El ingeniero aeronáutico Nils Bohlin diseñó el cinturón de tres puntos de anclaje para Volvo. La compañía sueca liberó la patente de manera abierta y gratuita para proteger la vida de todos los seres humanos.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores de Salud Pública y Trauma Vial):</strong> El aumento en la velocidad de circulación derivó en una epidemia de muertes por impacto contra el volante, fracturas torácicas y eyección violenta de ocupantes fuera del habitáculo.
+                    </div>
+                    <div class="card-footer-flex">
+                        <div class="click-hint"><span>🔍 Clic para expandir ficha técnica</span></div>
+                        <span class="expand-btn">Ver Ficha Completa →</span>
+                    </div>
+                    <div class="extra-info-hidden" style="display: none;">
+                        <div class="tab-data-spec">
+                            <ul>
+                                <li><strong>Geometría:</strong> Banda continua en forma de 'V' que sujeta simultáneamente la pelvis y el tórax.</li>
+                                <li><strong>Puntos de Anclaje:</strong> Tres puntos estructurales en el piso y pilar 'B' del chasis, evitando el deslizamiento submarino del cuerpo.</li>
+                                <li><strong>Biomedicina Aplicada:</strong> Distribución uniforme de las fuerzas cinéticas sobre zonas óseas rígidas (cresta ilíaca y esternón/clavícula).</li>
+                                <li><strong>Debut Comercial:</strong> Equipado de serie por primera vez en el Volvo PV544 en agosto de 1959.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-data-impact">
+                            <p>Instituciones internacionales estiman que el cinturón de seguridad de tres puntos ha salvado directamente más de 1.000.000 de vidas humanas y reducido en un 50% el riesgo de muerte en siniestros frontales. Sigue siendo el dispositivo de seguridad pasiva más eficaz jamás concebido.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HITO 8: 1973 -->
+            <div class="timeline-item" data-index="7" data-year="1973" data-categories="propulsion software">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-pulse"></div>
+                </div>
+                <div class="content-card" tabindex="0">
+                    <div class="card-glow-overlay"></div>
+                    <div class="card-header-flex">
+                        <span class="year-tag">1973</span>
+                        <span class="category-badge">Electrónica & Control de Emisiones</span>
+                    </div>
+                    <h3 class="card-title">Inyección Electrónica EFI y Convertidor Catalítico</h3>
+                    <div class="img-wrapper">
+                        <img src="8.jpg" alt="Inyección Electrónica y Convertidor Catalítico 1973" class="card-img" loading="lazy">
+                        <img src="6.jpg" alt="Inyección Electrónica y Convertidor Catalítico 1973" class="card-img" loading="lazy">
+                        <div class="img-fallback">
+                            <span class="fb-icon">🔬</span>
+                            <span class="fb-text">Imagen: <strong>8.jpg</strong></span>
+                            <span class="fb-text">Imagen: <strong>6.jpg</strong></span>
+                            <span class="fb-sub">Inyección Electrónica EFI y Sonda Lambda (1973-1976)</span>
+                        </div>
+                    </div>
+                    <p class="desc-text">Tras el impacto de la crisis petrolera, la industria sustituyó los carburadores mecánicos por sistemas de inyección electrónica (Bosch D-Jetronic / L-Jetronic) y convertidores catalíticos de tres vías.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Geopolíticos y Ambientales):</strong> El embargo petrolero de la OPEP disparó el precio del combustible, al tiempo que leyes como la Clean Air Act de EE.UU. exigieron erradicar el esmog tóxico urbano.
+                    </div>
+                    <div class="card-footer-flex">
+                        <div class="click-hint"><span>🔍 Clic para expandir ficha técnica</span></div>
+                        <span class="expand-btn">Ver Ficha Completa →</span>
+                    </div>
+                    <div class="extra-info-hidden" style="display: none;">
+                        <div class="tab-data-spec">
+                            <ul>
+                                <li><strong>Sistema EFI:</strong> Electroválvulas de inyección multipunto controladas por microprocesador analógico/digital temprano.</li>
+                                <li><strong>Sonda Lambda (1976):</strong> Sensor de zirconio en el escape que mide el oxígeno residual para mantener la relación estequiométrica perfecta (λ = 1.0, 14.7:1 en gasolina).</li>
+                                <li><strong>Catalizador de 3 Vías:</strong> Monolito cerámico con platino, paladio y rodio que oxida CO y HC y reduce los óxidos de nitrógeno (NOx).</li>
+                                <li><strong>Eficiencia Térmica:</strong> Mejoró el rendimiento por litro en un 20% respecto a carburadores convencionales.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-data-impact">
+                            <p>Permitió eliminar más del 85% de las emisiones venenosas de monóxido de carbono e hidrocarburos no combustionados, salvando de la polución a las grandes metrópolis y dando inicio formal a la informática y la mecatrónica de gestión del motor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HITO 9: 1978 [NUEVO] -->
+            <div class="timeline-item" data-index="8" data-year="1978" data-categories="seguridad software">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-pulse"></div>
+                </div>
+                <div class="content-card" tabindex="0">
+                    <div class="card-glow-overlay"></div>
+                    <div class="card-header-flex">
+                        <span class="year-tag">1978</span>
+                        <span class="category-badge">Mecatrónica de Seguridad Activa</span>
+                    </div>
+                    <h3 class="card-title">Frenos Antibloqueo Digitales (Bosch ABS en Mercedes W116)</h3>
+                    <div class="img-wrapper">
+                        <img src="9.jpg" alt="Sistema ABS Bosch 1978" class="card-img" loading="lazy">
+                        <img src="13.jpg" alt="Sistema ABS Bosch 1978" class="card-img" loading="lazy">
+                        <div class="img-fallback">
+                            <span class="fb-icon">🛑</span>
+                            <span class="fb-text">Imagen: <strong>9.jpg</strong></span>
+                            <span class="fb-text">Imagen: <strong>13.jpg</strong></span>
+                            <span class="fb-sub">Sistema ABS Electrónico Bosch (1978)</span>
+                        </div>
+                    </div>
+                    <p class="desc-text">Bosch y Daimler-Benz desarrollaron y lanzaron al mercado el primer sistema antibloqueo de frenos (ABS) electrónico digital de cuatro canales para vehículos de producción en masa en el Mercedes-Benz Clase S (W116).</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores de Control Dinámico y Fricción):</strong> En frenadas de emergencia sobre asfalto mojado o hielo, las ruedas se bloqueaban por completo, perdiendo fricción estática e impidiendo al conductor maniobrar o cambiar de dirección con el volante.
+                    </div>
+                    <div class="card-footer-flex">
+                        <div class="click-hint"><span>🔍 Clic para expandir ficha técnica</span></div>
+                        <span class="expand-btn">Ver Ficha Completa →</span>
+                    </div>
+                    <div class="extra-info-hidden" style="display: none;">
+                        <div class="tab-data-spec">
+                            <ul>
+                                <li><strong>Arquitectura Electrónica:</strong> Unidad de control ECU digital con circuitos integrados duales y redundancia de cálculo de seguridad.</li>
+                                <li><strong>Sensores:</strong> Captadores inductivos de rueda que registran la velocidad tangencial de cada neumático.</li>
+                                <li><strong>Modulación Hidráulica:</strong> Bloque de electroválvulas capaz de aumentar, retener y reducir la presión en los bombines hasta 15 veces por segundo.</li>
+                                <li><strong>Resultado Físico:</strong> Mantiene los neumáticos en la zona de máximo agarre (fricción estática), reduciendo la distancia de detención y garantizando el control del volante.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-data-impact">
+                            <p>El ABS transformó los frenos de un sistema mecánico puramente pasivo a un sistema mecatrónico digital activo. Sentó las bases directas para el control de tracción (TCS/ASR) y el posterior control de estabilidad (ESP), siendo hoy un estándar legal obligatorio en todo el planeta.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HITO 10: 1995 [NUEVO] -->
+            <div class="timeline-item" data-index="9" data-year="1995" data-categories="seguridad software">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-pulse"></div>
+                </div>
+                <div class="content-card" tabindex="0">
+                    <div class="card-glow-overlay"></div>
+                    <div class="card-header-flex">
+                        <span class="year-tag">1995</span>
+                        <span class="category-badge">Seguridad Dinámica Integral</span>
+                    </div>
+                    <h3 class="card-title">Control Electrónico de Estabilidad (Bosch ESP / ESC)</h3>
+                    <div class="img-wrapper">
+                        <img src="10.jpg" alt="Control Electrónico de Estabilidad ESP 1995" class="card-img" loading="lazy">
+                        <img src="14.jpg" alt="Control Electrónico de Estabilidad ESP 1995" class="card-img" loading="lazy">
+                        <div class="img-fallback">
+                            <span class="fb-icon">🎯</span>
+                            <span class="fb-text">Imagen: <strong>10.jpg</strong></span>
+                            <span class="fb-text">Imagen: <strong>14.jpg</strong></span>
+                            <span class="fb-sub">Control Electrónico de Estabilidad Bosch ESP (1995)</span>
+                        </div>
+                    </div>
+                    <p class="desc-text">Bosch y Mercedes-Benz introducen en el S 600 Coupé (C140) el Control Electrónico de Estabilidad (ESP/ESC), un cerebro computacional capaz de frenar ruedas selectivamente para evitar trompos y derrapes.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores de Prevención de Pérdida de Trayectoria):</strong> Las estadísticas de tráfico revelaban que una gran cantidad de accidentes mortales se originaban por pérdida de adherencia lateral en curvas o maniobras esquivas de pánico que ningún conductor humano podía corregir a tiempo.
+                    </div>
+                    <div class="card-footer-flex">
+                        <div class="click-hint"><span>🔍 Clic para expandir ficha técnica</span></div>
+                        <span class="expand-btn">Ver Ficha Completa →</span>
+                    </div>
+                    <div class="extra-info-hidden" style="display: none;">
+                        <div class="tab-data-spec">
+                            <ul>
+                                <li><strong>Sensores Clave:</strong> Sensor micromecánico de guiñada (yaw rate), acelerómetro transversal y sensor de ángulo de dirección del volante.</li>
+                                <li><strong>Frecuencia de Muestreo:</strong> La ECU analiza el estado dinámico del vehículo 25 veces por segundo (cada 40 milisegundos).</li>
+                                <li><strong>Corrección Activa:</strong> Si detecta subviraje (el vehículo se va de frente), frena la rueda trasera interior; si detecta sobreviraje (derrape de cola), frena la rueda delantera exterior y reduce el par motor.</li>
+                                <li><strong>Respuesta:</strong> Interviene en fracciones de segundo antes de que el conductor perciba la pérdida de control.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-data-impact">
+                            <p>Expertos en biomecánica y aseguradoras afirman que el ESP es el dispositivo de seguridad más importante de la historia automotriz después del cinturón de seguridad: previene hasta un 80% de los accidentes causados por derrape y pérdida de trayectoria en curva.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HITO 11: 1997 -->
+            <div class="timeline-item" data-index="10" data-year="1997" data-categories="propulsion">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-pulse"></div>
+                </div>
+                <div class="content-card" tabindex="0">
+                    <div class="card-glow-overlay"></div>
+                    <div class="card-header-flex">
+                        <span class="year-tag">1997</span>
+                        <span class="category-badge">Propulsión Híbrida Masiva</span>
+                    </div>
+                    <h3 class="card-title">Masificación del Motor Híbrido (Toyota Prius)</h3>
+                    <div class="img-wrapper">
+                        <img src="11.jpg" alt="Toyota Prius Híbrido 1997" class="card-img" loading="lazy">
+                        <img src="7.jpg" alt="Toyota Prius Híbrido 1997" class="card-img" loading="lazy">
+                        <div class="img-fallback">
+                            <span class="fb-icon">🌱</span>
+                            <span class="fb-text">Imagen: <strong>11.jpg</strong></span>
+                            <span class="fb-text">Imagen: <strong>7.jpg</strong></span>
+                            <span class="fb-sub">Toyota Prius Híbrido NHW10 (1997)</span>
+                        </div>
+                    </div>
+                    <p class="desc-text">Lanzamiento masivo del Toyota Prius (NHW10), combinando un motor térmico de alta eficiencia en ciclo Atkinson con un motor eléctrico síncrono y frenado regenerativo mediante el sistema THS.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Ecológicos y Mitigación Climática):</strong> La firma del Protocolo de Kioto sobre el cambio climático obligó a reducir las emisiones de gases de efecto invernadero (CO₂) duplicando el rendimiento en ciclo urbano.
+                    </div>
+                    <div class="card-footer-flex">
+                        <div class="click-hint"><span>🔍 Clic para expandir ficha técnica</span></div>
+                        <span class="expand-btn">Ver Ficha Completa →</span>
+                    </div>
+                    <div class="extra-info-hidden" style="display: none;">
+                        <div class="tab-data-spec">
+                            <ul>
+                                <li><strong>Transmisión e-CVT:</strong> Engranaje divisor de potencia epicicloidal planetario que elimina embrague y caja de cambios tradicional.</li>
+                                <li><strong>Motor Térmico:</strong> 1.5L ciclo Atkinson de 4 cilindros con alta relación de expansión geométrica.</li>
+                                <li><strong>Motor Eléctrico:</strong> Síncrono de imanes permanentes con par motor instantáneo desde 0 rpm.</li>
+                                <li><strong>Batería:</strong> Paquete sellado de níquel-metal hidruro (NiMH) de 288V con recarga automática por regeneración cinética.</li>
+                                <li><strong>Rendimiento:</strong> Consumos inferiores a 4.0 litros cada 100 km en tráfico urbano denso.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-data-impact">
+                            <p>El Prius rompió el escepticismo mundial hacia la electrificación, acumulando millones de unidades vendidas y demostrando que la recuperación de energía cinética en las frenadas era indispensable para la sostenibilidad energética del transporte moderno.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HITO 12: 2008 -->
+            <div class="timeline-item" data-index="11" data-year="2008" data-categories="propulsion">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-pulse"></div>
+                </div>
+                <div class="content-card" tabindex="0">
+                    <div class="card-glow-overlay"></div>
+                    <div class="card-header-flex">
+                        <span class="year-tag">2008</span>
+                        <span class="category-badge">Baterías de Ion-Litio & Alta Autonomía</span>
+                    </div>
+                    <h3 class="card-title">Revolución de Baterías de Ion-Litio (Tesla Roadster)</h3>
+                    <div class="img-wrapper">
+                        <img src="12.jpg" alt="Tesla Roadster 2008" class="card-img" loading="lazy">
+                        <img src="8.jpg" alt="Tesla Roadster 2008" class="card-img" loading="lazy">
+                        <div class="img-fallback">
+                            <span class="fb-icon">⚡</span>
+                            <span class="fb-text">Imagen: <strong>12.jpg</strong></span>
+                            <span class="fb-text">Imagen: <strong>8.jpg</strong></span>
+                            <span class="fb-sub">Tesla Roadster 1ra Generación (2008)</span>
+                        </div>
+                    </div>
+                    <p class="desc-text">Nace la era moderna del auto 100% eléctrico homologado para autopista con el Tesla Roadster, impulsado por miles de celdas cilíndricas de iones de litio y superando en prestaciones a superdeportivos de combustión.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Tecnológicos y Densidad Energética):</strong> Las celdas de iones de litio (desarrolladas inicialmente para computadores portátiles) alcanzaron la densidad gravimétrica necesaria para superar los 300 km de autonomía real.
+                    </div>
+                    <div class="card-footer-flex">
+                        <div class="click-hint"><span>🔍 Clic para expandir ficha técnica</span></div>
+                        <span class="expand-btn">Ver Ficha Completa →</span>
+                    </div>
+                    <div class="extra-info-hidden" style="display: none;">
+                        <div class="tab-data-spec">
+                            <ul>
+                                <li><strong>Almacenamiento:</strong> Pack de 53 kWh compuesto por 6.831 celdas cilíndricas de iones de litio formato 18650 con refrigeración líquida inteligente.</li>
+                                <li><strong>Motor:</strong> Inducción trifásico AC de 4 polos capaz de girar hasta 14.000 rpm con eficiencia térmica superior al 92%.</li>
+                                <li><strong>Aceleración y Velocidad:</strong> 0 a 100 km/h en 3.7 segundos sin escalonamiento de marchas mecánicas.</li>
+                                <li><strong>Autonomía Certificada:</strong> 393 km (244 millas) por carga completa en ciclo EPA.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-data-impact">
+                            <p>Demolió el mito de que los automóviles eléctricos eran carritos lentos o aburridos, obligando a todos los grandes consorcios automotrices del planeta a acelerar sus programas de inversión multimillonaria en electrificación total.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HITO 13: 2015 -->
+            <div class="timeline-item" data-index="12" data-year="2015" data-categories="seguridad software">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-pulse"></div>
+                </div>
+                <div class="content-card" tabindex="0">
+                    <div class="card-glow-overlay"></div>
+                    <div class="card-header-flex">
+                        <span class="year-tag">2015</span>
+                        <span class="category-badge">Fusión Sensorial & ADAS</span>
+                    </div>
+                    <h3 class="card-title">Telemetría IoT, Radar 77GHz y Sistemas ADAS Nivel 2</h3>
+                    <div class="img-wrapper">
+                        <img src="13.jpg" alt="Sistemas ADAS y Telemetría 2015" class="card-img" loading="lazy">
+                        <img src="9.jpg" alt="Sistemas ADAS y Telemetría 2015" class="card-img" loading="lazy">
+                        <div class="img-fallback">
+                            <span class="fb-icon">📡</span>
+                            <span class="fb-text">Imagen: <strong>13.jpg</strong></span>
+                            <span class="fb-text">Imagen: <strong>9.jpg</strong></span>
+                            <span class="fb-sub">Sistemas ADAS y Fusión Sensorial (2015)</span>
+                        </div>
+                    </div>
+                    <p class="desc-text">Los automóviles integran radares de onda milimétrica de 77 GHz, visión artificial computacional profunda y conexión celular permanente para sistemas avanzados de asistencia a la conducción (ADAS).</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Computacionales y Conectividad):</strong> La miniaturización de chips de procesamiento gráfico y la exigencia de frenado autónomo de emergencia (AEB) impulsaron la automatización de la seguridad activa.
+                    </div>
+                    <div class="card-footer-flex">
+                        <div class="click-hint"><span>🔍 Clic para expandir ficha técnica</span></div>
+                        <span class="expand-btn">Ver Ficha Completa →</span>
+                    </div>
+                    <div class="extra-info-hidden" style="display: none;">
+                        <div class="tab-data-spec">
+                            <ul>
+                                <li><strong>Sensores ADAS:</strong> Radar frontal milimétrico de 77 GHz, cámaras de visión artificial estéreo y matriz de 12 sensores ultrasónicos.</li>
+                                <li><strong>Clasificación SAE:</strong> Conducción automatizada Nivel 2 (control simultáneo longitudinal y lateral con supervisión del conductor).</li>
+                                <li><strong>Funciones Activas:</strong> Frenado Autónomo de Emergencia con detección de peatones, Mantenimiento Activo de Carril y Control de Crucero Adaptativo.</li>
+                                <li><strong>Conectividad:</strong> Módems 4G LTE y telemática en la nube para actualizaciones de firmware inalámbricas (OTA).</li>
+                            </ul>
+                        </div>
+                        <div class="tab-data-impact">
+                            <p>Marcó la transición histórica desde la seguridad reactiva hacia la seguridad predictiva: el automóvil comenzó a procesar y entender su entorno en tiempo real para evitar siniestros antes de que el ser humano reaccione.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HITO 14: 2020 [NUEVO] -->
+            <div class="timeline-item" data-index="13" data-year="2020" data-categories="propulsion manufactura">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-pulse"></div>
+                </div>
+                <div class="content-card" tabindex="0">
+                    <div class="card-glow-overlay"></div>
+                    <div class="card-header-flex">
+                        <span class="year-tag">2020</span>
+                        <span class="category-badge">Arquitectura 800V & Batería Estructural</span>
+                    </div>
+                    <h3 class="card-title">Arquitectura Eléctrica de 800V y Cell-to-Pack (Taycan / Blade)</h3>
+                    <div class="img-wrapper">
+                        <img src="14.jpg" alt="Arquitectura 800V y Batería Estructural 2020" class="card-img" loading="lazy">
+                        <img src="15.jpg" alt="Arquitectura 800V y Batería Estructural 2020" class="card-img" loading="lazy">
+                        <div class="img-fallback">
+                            <span class="fb-icon">🔋</span>
+                            <span class="fb-text">Imagen: <strong>14.jpg</strong></span>
+                            <span class="fb-text">Imagen: <strong>15.jpg</strong></span>
+                            <span class="fb-sub">Arquitectura de 800V y Baterías Estructurales (2020)</span>
+                        </div>
+                    </div>
+                    <p class="desc-text">Llegan las plataformas eléctricas de 800 voltios con carga ultrarrápida (Porsche Taycan / E-GMP) e innovaciones estructurales como las baterías Blade y Cell-to-Pack que integran las celdas directamente al chasis.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores Termodinámicos y Tiempos de Recarga):</strong> Para cargar a más de 250 kW con 400V, la corriente provocaba calentamiento excesivo por efecto Joule (I²R). A 800V, la corriente se divide a la mitad con cables más livianos y recargas en 18 minutos.
+                    </div>
+                    <div class="card-footer-flex">
+                        <div class="click-hint"><span>🔍 Clic para expandir ficha técnica</span></div>
+                        <span class="expand-btn">Ver Ficha Completa →</span>
+                    </div>
+                    <div class="extra-info-hidden" style="display: none;">
+                        <div class="tab-data-spec">
+                            <ul>
+                                <li><strong>Tensión Nominal:</strong> 800 voltios con semiconductores de potencia de Carburo de Silicio (SiC).</li>
+                                <li><strong>Potencia de Carga Rápida DC:</strong> De 270 kW a 350 kW de potencia punta; recarga del 10% al 80% en 18 a 22 minutos.</li>
+                                <li><strong>Concepto Cell-to-Pack (CTP):</strong> Supresión de módulos intermedios; las celdas prismáticas o laminares se fijan directamente a la estructura portante del auto.</li>
+                                <li><strong>Seguridad Térmica:</strong> Química LFP (litio-ferrofosfato) y diseño Blade inmune a perforación por clavo y desbocamiento térmico.</li>
+                                <li><strong>Rigidez Estructural:</strong> El pack de batería aporta más de un 40% a la rigidez torsional total del monocasco.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-data-impact">
+                            <p>Eliminó uno de los mayores obstáculos para los viajes interurbanos en vehículos eléctricos: los largos tiempos de espera en estaciones de servicio, igualando casi por completo la experiencia de parada con la de un coche convencional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HITO 15: 2026 -->
+            <div class="timeline-item" data-index="14" data-year="2026" data-categories="software propulsion">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-pulse"></div>
+                </div>
+                <div class="content-card" tabindex="0">
+                    <div class="card-glow-overlay"></div>
+                    <div class="card-header-flex">
+                        <span class="year-tag">2026</span>
+                        <span class="category-badge">Vehículos SDV & Superchips IA</span>
+                    </div>
+                    <h3 class="card-title">Vehículos Definidos por Software (SDV) e IA Integrada</h3>
+                    <div class="img-wrapper">
+                        <img src="15.jpg" alt="Vehículos Definidos por Software SDV 2026" class="card-img" loading="lazy">
+                        <img src="10.jpg" alt="Vehículos Definidos por Software SDV 2026" class="card-img" loading="lazy">
+                        <div class="img-fallback">
+                            <span class="fb-icon">🤖</span>
+                            <span class="fb-text">Imagen: <strong>15.jpg</strong></span>
+                            <span class="fb-text">Imagen: <strong>10.jpg</strong></span>
+                            <span class="fb-sub">Vehículos SDV e IA Multimodal (2026)</span>
+                        </div>
+                    </div>
+                    <p class="desc-text">Consolidación de los Vehículos Definidos por Software (SDV), supercomputación zonal a bordo (SoC de más de 2.000 TFLOPS), sensores LiDAR de estado sólido, IA multimodal y conducción autónoma conectada a redes inteligentes V2G.</p>
+                    <div class="factor-box">
+                        <strong>Razón de la evolución (Factores de Software Centralizado y Sostenibilidad):</strong> La sustitución de decenas de microcontroladores aislados por una arquitectura de computación centralizada permite actualizar dinámicamente el comportamiento, seguridad y autonomía del vehículo vía satélite.
+                    </div>
+                    <div class="card-footer-flex">
+                        <div class="click-hint"><span>🔍 Clic para expandir ficha técnica</span></div>
+                        <span class="expand-btn">Ver Ficha Completa →</span>
+                    </div>
+                    <div class="extra-info-hidden" style="display: none;">
+                        <div class="tab-data-spec">
+                            <ul>
+                                <li><strong>Supercomputación:</strong> Chips zonales automotrices (como NVIDIA DRIVE Thor o Qualcomm Snapdragon Ride) ejecutando modelos de IA end-to-end.</li>
+                                <li><strong>Sensores Avanzados:</strong> LiDAR de estado sólido de 1.550 nm, cámaras 4K HDR y radares 4D de imagen con alcance de más de 250 metros.</li>
+                                <li><strong>Actualizaciones OTA Continuas:</strong> Modificación remota del mapa de par, gestión de batería y capacidades de pilotaje autónomo Nivel 3/4.</li>
+                                <li><strong>Integración V2G (Vehicle-to-Grid):</strong> Los automóviles funcionan como baterías gigantes descentralizadas que estabilizan la red eléctrica alimentando hogares con energía solar y eólica.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-data-impact">
+                            <p>El automóvil culmina su metamorfosis histórica: de ser una máquina mecánica de vapor en 1769 se transforma en un robot inteligente, conectado y limpio en 2026, redefiniendo la convivencia entre la tecnología industrial, la seguridad vial y el medio ambiente global.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /timeline -->
+
+        <!-- MINIMAPA LATERAL TEMPORAL (DESKTOP) -->
+        <aside class="timeline-minimap" id="timeline-minimap" aria-label="Navegación temporal rápida">
+            <div class="minimap-track">
+                <div class="minimap-progress" id="minimap-progress"></div>
+                <!-- Puntos dinámicos generados por JS -->
+            </div>
+        </aside>
+
+        <!-- FOOTER ENTERPRISE -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="footer-badge">Evaluación Sumativa de Tecnología</span>
+                    <h3>Liceo Bicentenario de Excelencia Industrial Metodista</h3>
+                    <p class="footer-sub">Módulo: Servicios y Productos Tecnológicos — 1° Medio</p>
+                </div>
+                <div class="footer-credits">
+                    <p>Proyecto desarrollado por: <strong>Ricardo Eleazar Reyes Amestica</strong></p>
+                    <p class="tech-stack">Plataforma Web Nativa Interactiva • Arquitectura Responsiva Enterprise • 2026</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- BOTÓN VOLVER ARRIBA FLOTANTE -->
+        <button id="back-to-top" class="back-to-top-btn" title="Volver al inicio" aria-label="Volver arriba">
+            ↑
+        </button>
+
+    </div><!-- /container -->
+
+    <!-- MODAL ENTERPRISE EXPANDIDO (CINEMÁTICO CON TABS Y NAVEGACIÓN CONTINUA) -->
+    <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="mod-title">
+        <div class="modal-card">
+            
+            <!-- Barra Superior del Modal -->
+            <div class="modal-top-bar">
+                <div class="modal-counter">
+                    <span class="counter-dot"></span>
+                    <span id="mod-counter-text">Hito 1 de 15</span>
+                </div>
+                <div class="modal-nav-group">
+                    <button class="modal-nav-btn" id="mod-prev-btn" title="Hito anterior (Flecha Izquierda ←)" aria-label="Hito anterior">
+                        <span>← Anterior</span>
+                    </button>
+                    <button class="modal-nav-btn" id="mod-next-btn" title="Siguiente hito (Flecha Derecha →)" aria-label="Siguiente hito">
+                        <span>Siguiente →</span>
+                    </button>
+                    <button class="close-btn" id="close-btn" title="Cerrar modal (ESC)" aria-label="Cerrar">&times;</button>
+                </div>
+            </div>
+
+            <!-- Contenido Principal del Modal -->
+            <div class="modal-layout">
+                <div class="modal-left">
+                    <div class="modal-img-container">
+                        <img id="mod-img" src="" alt="Imagen del hito ampliada">
+                        <div id="mod-img-fallback" class="img-fallback" style="display: none;">
+                            <span class="fb-icon">📸</span>
+                            <span class="fb-text" id="mod-fallback-name">Imagen pendiente</span>
+                            <span class="fb-sub" id="mod-fallback-desc"></span>
+                        </div>
+                    </div>
+                    <div class="modal-meta-box">
+                        <div class="meta-row">
+                            <span class="meta-label">Año Clave:</span>
+                            <strong id="mod-meta-year" class="meta-val"></strong>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Categoría:</span>
+                            <span id="mod-meta-category" class="category-badge"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-right">
+                    <h2 id="mod-title" class="modal-heading"></h2>
+
+                    <!-- Pestañas Interactivas del Modal -->
+                    <div class="modal-tabs" role="tablist">
+                        <button class="tab-btn active" data-tab="tab-overview">Visión General</button>
+                        <button class="tab-btn" data-tab="tab-specs">Ficha Técnica & Mecánica</button>
+                        <button class="tab-btn" data-tab="tab-impact">Impacto Histórico & Futuro</button>
+                    </div>
+
+                    <!-- Contenedores de cada Pestaña -->
+                    <div class="tab-content active" id="tab-overview">
+                        <p id="mod-desc" class="mod-main-text"></p>
+                        <div id="mod-factor" class="factor-box"></div>
+                    </div>
+
+                    <div class="tab-content" id="tab-specs">
+                        <div class="specs-wrapper" id="mod-specs-content">
+                            <!-- Datos inyectados dinámicamente -->
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tab-impact">
+                        <div class="impact-wrapper" id="mod-impact-content">
+                            <!-- Datos inyectados dinámicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Pie del modal con atajos de teclado -->
+                    <div class="modal-keyboard-hint">
+                        <span>💡 Navega con <kbd>←</kbd> y <kbd>→</kbd> o cierra con <kbd>ESC</kbd></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scripts de la Aplicación -->
+    <script src="main.js"></script>
+</body>
+</html>
